@@ -1,0 +1,102 @@
+#1
+def is_member(c,g):
+    for i in range(len(g)):
+        if c==g[i]:
+            b= True
+        else:
+            b= False
+    return b
+    
+print(is_member(10,[20,10]))
+
+
+#2
+def is_valid_pincode(pin):
+    if len(str(pin))==6:
+      return "Valid" 
+    else:
+      return "Not valid"
+print(is_valid_pincode(518411))
+
+
+#3
+def overlapping(c1,c2):
+    for i in c1:
+        for j in c2:
+            if i==j:
+                b= "true"
+            if i!=j:
+                b= "false"
+    return b
+print (overlapping([1,2,3,4],[1,2,3,4,5]))
+
+
+#4 listOfWords = ['ram','ramu','raman','ramana','ramanay']
+   listOfInts = []
+ 
+   for i in range(len(listOfWords)):
+      listOfInts.append(len(listOfWords[i]))
+ 
+   print ("List of words:"+str(listOfWords))    
+   print ("List of wordlength:"+str(listOfInts))
+
+
+#5
+def find_longest_word(words):
+    max=0
+    for i in words:
+        if len(i)>max:
+            max=len(i)
+            res=i
+    return (res,max) 
+print(find_longest_word(["sai", "sankar", "mahendra", "sivaram"]))
+
+
+#6
+def palindrome(str):
+    punc='''!()[]-;:'"\,<>./?@#%^&*_+~ '''
+    s=""
+    for i in str:
+        if i in punc:
+            s=s+""
+        else:
+            s=s+i
+    return s.lower()==s[::-1].lower()
+print (palindrome("Was it a rat I saw"))
+
+
+#7
+def char_freq(str):
+  freq = {}
+  for i in str:
+    if i in freq:
+      freq[i] += 1
+    else:
+      freq[i] = 1
+  return freq
+print (char_freq("abbabcbdbabdbdbabababcbcbab"))
+
+
+#8
+def encode_decode(str):
+    key = {'a':'n', 'b':'o', 'c':'p', 'd':'q', 'e':'r', 'f':'s', 'g':'t', 'h':'u', 'i':'v', 'j':'w', 'k':'x', 'l':'y', 'm':'z', 'n':'a', 'o':'b', 'p':'c', 'q':'d', 'r':'e', 's':'f', 't':'g', 'u':'h', 'v':'i', 'w':'j', 'x':'k', 'y':'l', 'z':'m', 'A':'N', 'H':'U', 'T':'V', 'J': 'W', 'K':'X', 'L':'Y', 'M':'Z', 'N': 'A', 'O':'B', 'P':'C', 'Q':'D', 'R':'E', 'S':'F', 'T':'G', 'U':'H', 'V':'T', 'W':'J', 'X':'K', 'Y':'L', 'B':'0', 'C':'P', 'D': 'Q', 'E':'R', 'F':'S', 'G':'T','Z':'M'}
+    s=""
+    for i in str:
+        if i in key.keys():
+            s=s+key[i]
+        else:
+            s=s+i
+    return s
+print (encode_decode("Pnrfne pvcure? V zhpu cersre Pnrfne fnynq!"))
+
+
+#9
+def frequency(str):  
+    p = str.split()         
+    p1 = []
+    for i in p:             
+        if i not in p1:
+            p1.append(i)               
+    for i in range(0, len(p1)):
+        print(p1[i],":",str.count(p1[i]))
+print (frequency(str='sai mahesh sai mahesh siva sankar siva siva'))
