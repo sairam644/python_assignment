@@ -1,0 +1,160 @@
+#1
+def maximum(num1,num2):
+    if num1>num2:
+        return True
+    else:
+        return False
+
+
+#2
+def is_perfect(num):
+    sum=0
+    for i in range(1,num):
+        if num%i==0:
+            sum+=i
+    if sum==num:
+        return f"perffect number"
+    else:
+        return f"not perfect"
+
+#3
+def isogram(word):
+    return True if len(list(word))==len(set(word)) else False
+
+#4
+def elementwise_greater_than(mylist,threshold):
+    result=[]
+    for i in range(len(mylist)):
+        if mylist[i] > threshold:
+            result.append(True)
+        else:
+            result.append(False)
+    return result
+
+
+#5
+def strlen(word):
+    count=0
+    for i in word:
+        count=count+1
+    return count
+
+#6
+def anagram(str1,str2):
+    return sorted(str1)==sorted(str2)
+def anagrams(str1,str_list):
+    ana = []
+    for word in str_list:
+        if len(word)==len(str1):
+            if (anagram(str1,word)):
+                ana.append(word)
+                return word
+
+#7
+def is_vowel(s):
+    s=s.lower()
+    if s=="a" or s=="e" or s=="i" or s=="o" or s=="u":
+        return True
+    else:
+        return False
+
+#8
+def sum(li):
+    sum=0
+    for i in li:
+        sum=sum+i
+    return sum
+def multiply(li):
+    mul=1
+    for i in li:
+        mul=mul*i
+    return mul
+
+#9
+def reverse(sen):
+    return sen[::-1]
+
+#10
+def digital_root(num):
+    num=list(map(int,str(num)))
+    sum=0
+    for i in num:
+        sum=sum+i
+        s=str(sum)
+    if len(s)>1:
+        digital_root(s)
+    else:
+        return print(sum)
+
+
+#11
+def is_palindrome(word):
+    return True if word[::-1]==word else False
+
+#12
+def spell_correct(sen):
+    for word in sen:
+        if word+".":
+            s=sen.replace(".",". ")
+    s1=s.split()
+    return " ".join(s1)
+
+#13
+def bottle():
+    
+    for i in range(99,0,-1):
+        s=f'{i} bottles of beer on the\n wall, {i} bottles of beer.\n  Take one down, pass it around,\n  {i-1} bottles of beer on the wall\n'
+        print(s)
+
+#14
+from itertools import permutations
+def permu(s):
+    for i in permutations(s):
+        print(''.join(i))
+
+
+if __name__=="__main__":
+         print("1.Define a function max() that takes two numbers as arguments and returns the largest of them. Use the ifthenelse construct available in Python.\n")
+         print(maximum(13,10))
+       
+         print("2.Write a python function to test, if a given number (passed as argument) is a perfect number\n")
+         print(is_perfect(28))
+      
+ 
+         print("3.Write a python function to test, if a given word (passed as an argument) is an perfect isogram\n")
+         print(isogram("sairam"))
+        
+       
+         print("4.Implement the function given below:def elementwise_greater_than(mylist, threshold):Return a list with the same length as mylist, where the value at index i is True if L[i] is greater than threshold, and False otherwise.\n")
+         print(elementwise_greater_than([1,2,3,4,5],3))
+       
+         print("5.Define a function that computes the length of a given list or string. \n")
+         print(strlen("sairam"))
+         print("6. Write a function which accepts a word and a list of words. Return the anagrams of that word from the given list \n")
+         print(anagram("ant",["tan", "stand", "at"]))
+         
+         print("7.Write a function that takes a character (i.e. a string of length 1) and returns True if it is a vowel, False otherwise\n")
+         print(is_vowel("a"))
+        
+         print("8.Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in a list of numbers.\n") 
+         print(sum([1,2,3,4]))
+         print(multiply([1,2,3,4]))
+        
+         print("9.Define a function reverse() that computes the reversal of a string. For example, reverse(I am testing) should return the string gnitset ma I.\n")
+         print(reverse("I am testing"))
+        
+         print("10.Write a python function to find the digital root of a number.\n")
+         print(digital_root(506213214241)) 
+         
+         print("11.Define a function is_palindrome() that recognizes palindromes (i.e. words that look the same written backwards).\n")
+         print(is_palindrome("radar"))
+        
+         print("12.Define a simple spelling correction function correct() that takes a string and sees to it that 1) two or more occurrences of the space character is compressed into one, and 2) inserts an extra space after a period if the period is directly followed by a letter.\n ")
+         print(spell_correct(" This   is  very funny  and    cool.Indeed! "))  
+        
+         print("13.99 Bottles of Beer is a traditional song in the United States and Canada.99 bottles of beer on the wall, 99 bottles of beer.Take one down, pass it around, 98 bottles of beer on the wall. write a Python program capable of generating all the verses of the song.\n")
+         print(bottle())
+        
+         print("14.Write a function which accepts a string and returns a list of all possible permutations of the given string in python.\n")
+         print(permu('sai'))
+         print(permu('s'))
