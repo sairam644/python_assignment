@@ -1,0 +1,49 @@
+#Q1
+def search(pattern, txt):
+    P = len(pattern)
+    Q = len(txt)
+    for i in range(Q - P + 1):
+        j = 0
+        while(j < P):
+            if (txt[i + j] != pattern[j]):
+                break
+            j += 1
+        if (j == P):
+            print("Pattern found at index ", i)
+
+
+#Q2
+def my_reverse_list():
+    list = ['hi', 'my', 'name', 'is', 'sairam']
+    [print(i)for i in list[::-1]]
+
+#Q3
+
+def generateFibonacciSequence(n):
+    a, b = 0, 1
+    for i in range(n):
+        yield a
+        a, b = b, a + b
+
+
+if __name__ == "__main__":
+
+         print("Q1 : Write a program to find occurance of a search pattern inside a given text.")   
+         txt = "ABCDEFGHIJKLMNOPQRSTEFGHKLM"
+         pattern = "EFGH"
+         search(pattern, txt)
+
+         print("         ")
+
+         print("Q2 Write an iterator class my_reverse_list, that takes a list and iterate it from reverse direction.")
+         print("After iterarting the list is : ")
+         my_reverse_list()
+
+         print("         ")
+
+         print("Q3 Using Generator function print the Fibonacci series.")
+         print("Fibonacci series for given range 6 is : ", list(generateFibonacciSequence(5)))
+         print("Fibonacci series for given range 10 is : ", list(generateFibonacciSequence(12)))
+
+         
+
